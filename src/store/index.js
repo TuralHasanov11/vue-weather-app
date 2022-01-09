@@ -131,7 +131,7 @@ export default new Vuex.Store({
 
         snap.docChanges().forEach(async (doc)=>{
           if(doc.type == 'added' && !doc.doc.Nd){
-            const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${doc.doc.data().city}&appid=${state.APIKey}&units=metric`)
+            const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${doc.doc.data().city}&units=metric&appid=${state.APIKey}`)
             const data = res.data
 
             firebaseDB.doc(doc.doc.id).update({

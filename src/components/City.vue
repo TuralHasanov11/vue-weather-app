@@ -3,7 +3,7 @@
       <i v-if="editMode" ref="deleteCity" class="fas fa-trash-alt edit btn btn-dark"></i>
       <h4 class="d-block">{{city.city}}</h4>
       <div class="weather d-flex justify-content-end">
-          <span class="mr-2">{{Math.round(city.current_weather.main.temp)}}&deg;</span>
+          <span class="mr-2">{{Math.round(city.current_weather.main.temp)}}C&deg;</span>
           <img 
             :src="require(`../../public/conditions/${city.current_weather.weather[0].icon}.svg`)" 
             alt="">

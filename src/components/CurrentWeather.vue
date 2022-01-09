@@ -7,7 +7,7 @@
         </span>
         <span class="current-temperature">{{
           Math.round(currentWeather.main.temp)
-        }}&deg;</span>
+        }}C&deg;</span>
 
         <div class="temp-range">
           <div class="temp-high">
