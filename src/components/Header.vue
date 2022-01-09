@@ -4,9 +4,9 @@
       <nav class="d-flex justify-content-between">
           <span>Cities</span>
           <div class="right">
-              <i class="fas fa-edit mx-2" :class="{'edit-active':editMode}" @click="toggleEditMode" title="Edit"></i>
+              <!-- <i class="fas fa-edit mx-2" :class="{'edit-active':editMode}" @click="toggleEditMode" title="Edit"></i> -->
               <i class="fas fa-sync mx-2" @click="reloadApp" title="Refresh Page"></i>
-              <i class="fas fa-plus mx-2" @click="addCity" title="Add City"></i>
+              <!-- <i class="fas fa-plus mx-2" @click="addCity" title="Add City"></i> -->
           </div>
       </nav>
     </header>

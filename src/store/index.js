@@ -131,7 +131,7 @@ export default new Vuex.Store({
 
         snap.docChanges().forEach(async (doc)=>{
           if(doc.type == 'added' && !doc.doc.Nd){
-            const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${doc.doc.data().city}&appid=${state.APIKey}`)
+            const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${doc.doc.data().city}&appid=${state.APIKey}&units=metric`)
             const data = res.data
 
             firebaseDB.doc(doc.doc.id).update({
@@ -162,7 +162,7 @@ export default new Vuex.Store({
         .then((docs)=>{
             docs.forEach(doc=>{
               commit('SET_CURRENT_WEATHER', doc.data().current_weather)
-              axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${state.weather.currentWeather.coord.lat}&lon=${state.weather.currentWeather.coord.lon}&exclude=current,minuteley,alert&appid=${state.APIKey}`)
+              axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${state.weather.currentWeather.coord.lat}&lon=${state.weather.currentWeather.coord.lon}&exclude=current,minuteley,alert&appid=${state.APIKey}&units=metric`)
                   .then(res=>{
                       commit('SET_FORECAST', res.data)
                   })
